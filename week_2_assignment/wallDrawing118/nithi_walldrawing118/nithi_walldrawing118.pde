@@ -1,4 +1,4 @@
-int i; 
+int i=1; 
 float border = 15;  //MARGIN
 float x1;
 float y1;
