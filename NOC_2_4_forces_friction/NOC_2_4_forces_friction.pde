@@ -14,6 +14,7 @@ void draw() {
   background(255);
 
     PVector wind = new PVector(0, 0);
+    PVector wind2 = new PVector(0, 0);
 
     for (int i = 0; i < movers.length; i++) {
 
@@ -29,7 +30,14 @@ void draw() {
     wind = new PVector(-0.2, 0);
     }
     
+        // When mouse is on the right side of the object, force object to the right direction.
+    if (mouseY > movers[i].location.y){ 
+    wind2 = new PVector(0, 0.2); 
     
+    // When mouse is on the left side of the object, force object to the left direction.
+    }else if(mouseY < movers[i].location.y){
+    wind2 = new PVector(0, -0.2);
+    }
     
     
    
@@ -43,7 +51,9 @@ void draw() {
 
     movers[i].applyForce(friction);
     movers[i].applyForce(wind);
+    movers[i].applyForce(wind2);
     movers[i].applyForce(gravity);
+
     
     movers[i].update();
     movers[i].display();
