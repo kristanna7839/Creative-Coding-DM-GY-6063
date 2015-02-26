@@ -13,8 +13,8 @@ void setup() {
 void draw() {
   background(255);
 
-    PVector wind = new PVector(0, 0);
-    PVector wind2 = new PVector(0, 0);
+    PVector elastic = new PVector(0, 0);
+    PVector elastic2 = new PVector(0, 0);
 
     for (int i = 0; i < movers.length; i++) {
 
@@ -23,20 +23,20 @@ void draw() {
 
     // When mouse is on the right side of the object, force object to the right direction.
     if (mouseX > movers[i].location.x){ 
-    wind = new PVector(0.2, 0); 
+    elastic = new PVector(0.2, 0); 
     
     // When mouse is on the left side of the object, force object to the left direction.
     }else if(mouseX < movers[i].location.x){
-    wind = new PVector(-0.2, 0);
+    elastic = new PVector(-0.2, 0);
     }
     
-        // When mouse is on the right side of the object, force object to the right direction.
+    // When mouse is under the object, force object to the downward direction.
     if (mouseY > movers[i].location.y){ 
-    wind2 = new PVector(0, 0.2); 
+    elastic2 = new PVector(0, 0.2); 
     
-    // When mouse is on the left side of the object, force object to the left direction.
+    // When mouse is above the object, force object to the upward direction.
     }else if(mouseY < movers[i].location.y){
-    wind2 = new PVector(0, -0.2);
+    elastic2 = new PVector(0, -0.2);
     }
     
     
@@ -50,9 +50,8 @@ void draw() {
     friction.mult(c);
 
     movers[i].applyForce(friction);
-    movers[i].applyForce(wind);
-    movers[i].applyForce(wind2);
-    movers[i].applyForce(gravity);
+    movers[i].applyForce(elastic);
+    movers[i].applyForce(elastic2);
 
     
     movers[i].update();

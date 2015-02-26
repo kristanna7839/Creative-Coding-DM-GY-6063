@@ -38,8 +38,10 @@ class Mover {
     stroke(100,100,100,20);
     
     // Draw line from the corners to ellipse's position    
-    line(location.x,location.y,0,0);
-    line(location.x,location.y,width,0);
+    line(location.x,location.y,0,height/2);
+    line(location.x,location.y,width/2,0);
+    line(location.x,location.y,width,height/2);
+    line(location.x,location.y,width/2,height);
 
   }
 
