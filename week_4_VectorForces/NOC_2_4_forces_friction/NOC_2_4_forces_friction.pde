@@ -1,4 +1,4 @@
-Mover[] movers = new Mover[10];
+Mover[] movers = new Mover[1];
 
 void setup() {
   size(550, 550);

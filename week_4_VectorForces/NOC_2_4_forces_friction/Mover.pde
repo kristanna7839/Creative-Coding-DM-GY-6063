@@ -30,12 +30,12 @@ class Mover {
     ellipse(location.x,location.y,mass*16,mass*16);
     
     strokeWeight(1);
-    stroke(255,0,0,40);
+    stroke(255,0,0,140);
     
     // Draw line from mouse's position to ellipse's position
     line(location.x,location.y,mouseX,mouseY);  
 
-    stroke(100,100,100,20);
+    stroke(100,100,100,120);
     
     // Draw line from the corners to ellipse's position    
     line(location.x,location.y,0,0);
