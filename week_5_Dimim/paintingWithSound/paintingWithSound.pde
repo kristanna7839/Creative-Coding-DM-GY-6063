@@ -21,7 +21,7 @@ void draw () {
   y1 = mouseY;
   rectMode(CENTER);
   noFill ();
-  stroke (255, 45);
+  stroke (random(100,255),random(100),random(100), 45);
   
   // Use the variable of sound volume to draw rectangulars
   rect (x1, y1, vol, vol); 
