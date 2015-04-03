@@ -66,7 +66,10 @@ void draw() {
 }
 
 
-
+void mousePressed(){
+Mover movers_add = new Mover(random(1, 3), mouseX+random(-20,20), mouseY+random(-20,20));
+movers = (Mover[]) append(movers, movers_add);
+}
 
 
 
